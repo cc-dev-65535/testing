@@ -14,4 +14,7 @@ test('twitter link correct', async ({ page, context }) => {
   await expect(newPage).toHaveURL("https://twitter.com/tylertech");
 });
 
-
+test('homepage screenshot', async ({ page, context }) => {
+  await page.goto('https://www.tylertech.com');
+  await page.screenshot({ path: "screenshots/tyler-technologies-home-page-" + context.browser()?.browserType().name() + ".png", fullPage: true });
+});
